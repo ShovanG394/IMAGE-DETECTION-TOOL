@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Image Edge Detection Tool</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>🖼️ AI Image Edge Detection Tool</h1>
+    <button id="themeToggle">🌙 Toggle Theme</button>
+</header>
+
+<main class="container">
+
+    <!-- Upload Section -->
+    <div class="upload-box" id="dropArea">
+        <p>📤 Drag & Drop an Image Here</p>
+        <p>OR</p>
+        <input type="file" id="upload" accept="image/*">
+    </div>
+
+    <!-- Controls -->
+    <div class="controls">
+        <label>Select Edge Detection Method:</label>
+        <select id="method">
+            <option value="sobel">Sobel</option>
+            <option value="prewitt">Prewitt</option>
+            <option value="laplacian">Laplacian</option>
+            <option value="canny">Canny (OpenCV)</option>
+        </select>
+
+        <!-- Canny Controls -->
+        <div id="cannyControls" class="slider-group">
+            <label>Threshold 1: <span id="t1Value">50</span></label>
+            <input type="range" id="threshold1" min="0" max="255" value="50">
+
+            <label>Threshold 2: <span id="t2Value">150</span></label>
+            <input type="range" id="threshold2" min="0" max="255" value="150">
+        </div>
+
+        <button id="detectBtn">🔍 Detect Edges</button>
+        <button id="downloadBtn">💾 Download Image</button>
+    </div>
+
+    <!-- Canvas Section -->
+    <div class="canvas-container">
+        <div>
+            <h3>Original Image</h3>
+            <canvas id="originalCanvas"></canvas>
+        </div>
+        <div>
+            <h3>Edge Detected Image</h3>
+            <canvas id="edgeCanvas"></canvas>
+        </div>
+    </div>
+
+</main>
+
+<footer>
+    <p>✨ Developed using HTML, CSS, JavaScript & OpenCV.js</p>
+</footer>
+
+<!-- OpenCV.js -->
+<script async src="https://docs.opencv.org/4.x/opencv.js"
+        onload="onOpenCvReady();" type="text/javascript"></script>
+
+<!-- Main Script -->
+<script src="script.js"></script>
+
+</body>
+</html>
