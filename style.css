@@ -1,0 +1,115 @@
+:root {
+    --bg-gradient: linear-gradient(135deg, #6a11cb, #2575fc);
+    --card-bg: rgba(255, 255, 255, 0.15);
+    --text-color: #ffffff;
+    --accent: #ff7eb3;
+}
+
+body.dark {
+    --bg-gradient: linear-gradient(135deg, #141e30, #243b55);
+    --card-bg: rgba(0, 0, 0, 0.35);
+    --text-color: #f1f1f1;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: var(--bg-gradient);
+    color: var(--text-color);
+    min-height: 100vh;
+    text-align: center;
+}
+
+header {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 1.8rem;
+}
+
+#themeToggle {
+    background: var(--accent);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+}
+
+.container {
+    width: 95%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.upload-box {
+    border: 2px dashed #fff;
+    padding: 25px;
+    margin: 20px 0;
+    border-radius: 15px;
+    cursor: pointer;
+    background: var(--card-bg);
+    transition: 0.3s;
+}
+
+.upload-box:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.controls {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+select, input, button {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    border: none;
+    font-size: 16px;
+}
+
+button {
+    background: linear-gradient(45deg, #ff7eb3, #ff758c);
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+.slider-group {
+    display: none;
+}
+
+.canvas-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+canvas {
+    background: white;
+    border-radius: 10px;
+    max-width: 100%;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+footer {
+    margin-top: 20px;
+    padding: 15px;
+}
